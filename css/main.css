@@ -14,6 +14,12 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+html{
+  scroll-behavior: smooth;
+
 }
 {
 margin: 0;
@@ -89,13 +95,11 @@ a{
 }
 
 /* menu btn styling */
-/* Bouton */
-
 .menu-btn{
   color: #ffffff;
   font-size: 23px;
   cursor: pointer;
-  display: flex;
+  display: none;
 }
 
 /* home section styling */
@@ -146,15 +150,20 @@ a{
   color: crimson;
   background: none;
 }
-
-/*  about sectin styling */
+/*all similar content styling code*/
 section{
   padding: 100px 0;
 }
-.about{
+.about, .project, .skills, .contact, footer{
   font-family: 'Poppins', sans-serif;
 }
-.about .title{
+.about .about-content, .project .project-content, .skills .skills-content, .contact .contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+section .title{
   text-align: center;
   font-size: 40px;
   font-weight: 500;
@@ -162,7 +171,7 @@ section{
   padding-bottom: 20px;
   font-family: 'Ubuntu', sans-serif;
 }
-.about .title::before{
+/*section .title::before{
   content: "";
   position: absolute;
   bottom: -7px;
@@ -172,8 +181,8 @@ section{
   background: black;
   transform: translateX(-50%);
 }
-.about .title::after{
-  content: "Qui suis-je";
+section .title::after{
+
   position: absolute;
   bottom: -7px;
   left: 50%;
@@ -182,24 +191,307 @@ section{
   padding: 5px;
   background: #ffffff;
   transform: translateX(-50%);
-}
+}*/
+
+/*  about section styling */
+
+/*.about .title::after{
+  content: "Qui suis-je";
+}*/
+.about .about-content .left{
+  width: 45%;
+ }
 .about .about-content .left img{
   height: 400px;
   width: 400px;
   object-fit: cover;
   border-radius: 6px;
 }
+.about .about-content .right{
+  width: 55%;
+}
+.about .about-content .right .text{
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.about .about-content .right .text span{
+  color: crimson;
+}
+.about .about-content .right p{
+  text-align: justify;
+}
+.about .about-content .right a{
+  display: inline-block;
+  background: crimson;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
+}
+.about .about-content .right a:hover{
+  color: crimson;
+  background: none;
+}
 
+/*project section styling */
+.project{
+  color: #ffffff;
+  background: #111;
+}
+/*
+.project .title::before{
+  background: #ffffff;
+}
+.project .title::after{
+  content: "What i provide";
 
+}*/
+.project .project-content .card{
+  background: #222222;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: calc(50% - 20px);
+  margin-bottom: 20px;
+}
 
+.project .project-content .card1{
+  width: 33%;
+  background: #222222;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
+.project .project-content .card:hover{
+  background: crimson;
+}
+.project .project-content .card .box{
+  transition: all 0.3s ease;
+}
+.project .project-content .card:hover .box{
+  transform: scale(1.05);
+}
 
+/*
+.project .project-content .card i{
+  font-size: 50px;
+  color:crimson;
+}
+ */
+.project .project-content .card .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+}
 
+.project .project-content .sokoban img{
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.project .project-content .serie img{
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.project .project-content .labyrinthe img{
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.project .project-content .crypto img{
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+/*skills section styling*/
 
+.skills .skills-content .column{
+  width: calc(50% - 30px);
+}
+.skills .skills-content .left .text{
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.skills .skills-content .left p{
+  text-align: justify;
+}
+.skills .skills-content .left a{
+  display: inline-block;
+  background: crimson;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 16px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
+}
+.skills .skills-content .left a:hover{
+  color: crimson;
+  background: none;
+}
+.skills .skills-content .right .bars{
+  margin-bottom: 15px;
+}
+.skills .skills-content .right .info{
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+.skills .skills-content .right span{
+  font-weight: 500;
+  font-size: 18px;
+}
+.skills .skills-content .right .line{
+  height: 5px;
+  width: 100%;
+  background: lightgray;
+  position: relative;
+
+}
+.skills .skills-content .right .line::before{
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: crimson;
+}
+.skills .skills-content .right .dev::before{
+  width: 85%;
+}
+.skills .skills-content .right .java::before{
+  width: 60%;
+}
+.skills .skills-content .right .bash::before{
+  width: 85%;
+}
+.skills .skills-content .right .windows::before{
+  width: 65%;
+}.skills .skills-content .right .mssql::before{
+   width: 70%;
+ }
+.skills .skills-content .right .vmware::before{
+  width: 60%;
+}
+.skills .skills-content .right .nmap::before{
+  width: 65%;
+}
+/*contact section styling*/
+.contact{
+  background: #111;
+  color: white;
+}
+
+.contact .contact-content .column{
+  width: calc(50% - 30px);
+}
+.contact .contact-content .text{
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: white;
+}
+.contact .contact-content .left p{
+  text-align: justify;
+}
+.contact .contact-content .left .icons{
+  margin: 10px 0;
+}
+.contact .contact-content .row{
+  display: flex;
+  height: 65px;
+  align-items: center;
+}
+.contact .contact-content .row .info{
+  margin-left: 30px;
+}
+.contact .contact-content .row i{
+  font-size: 25px;
+  color: crimson;
+}
+.contact .contact-content .row .info .head{
+  font-weight: 500;
+}
+.contact .contact-content .row .info .sub-title{
+  color: lightgray;
+}
+
+.test{
+  background: #111111;
+}
+/*footer section styling*/
+footer{
+  background: #111111;
+  padding: 20px 23px;
+  color: #ffffff;
+}
+footer span a{
+  color: crimson;
+  text-decoration: none;
+}
+footer span a:hover{
+  text-decoration: underline;
+}
 /* responsive media query start */
-@media (max-width: 1104px){
+
+@media (max-width: 1465px){
+  .project .project-content .sokoban img{
+    height:150px;
+    width: 200px;
+  }
+  .project .project-content .serie img{
+    height:150px;
+    width: 200px;
+  }
+  .project .project-content .labyrinthe img{
+    height:150px;
+    width: 200px;
+  }
+  .project .project-content .crypto img{
+    height:150px;
+    width: 200px;
+  }
+  .project .project-content .card{
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 1300px){
   .home .max-width{
     margin-left: 0px;
+  }
+  .project .project-content .card{
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 1104px){
+  .about .about-content .left img{
+    height:350px;
+    width: 350px;
+  }
+  .project .project-content .card{
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 991px){
@@ -255,6 +547,32 @@ section{
      font-size: 23px;
      padding: 10px 30px;
    }
+
+   .max-width {
+     max-width: 800px;
+   }
+
+   .about .about-content .column {
+     width: 100%;
+   }
+
+   .about .about-content .left {
+     display: flex;
+     justify-content: center;
+     margin: 0 auto 60px;
+   }
+
+   .about .about-content .right {
+     flex: 100px;
+   }
+   .project .project-content .card{
+     width: calc(50% - 20px);
+     margin-bottom: 20px;
+   }
+   .skills .skills-content .column, .contact .contact-content .column{
+     width: 100%;
+     margin-bottom: 35px;
+   }
  }
 @media (max-width: 690px){
   .max-width{
@@ -269,6 +587,10 @@ section{
   .home .home-content a{
     font-size: 20px;
   }
+  .project .project-content .card, .skills .skills-content .column{
+    width: 100%;
+  }
+
 }
 @media (max-width: 500px){
   .home .home-content .text-2{
